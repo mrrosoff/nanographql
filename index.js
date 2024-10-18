@@ -7,7 +7,7 @@ function nanographql (str) {
   var name = getOpname.exec(str)
   return function (variables) {
     var data = { query: str }
-    if (variables) data.variables = JSON.stringify(variables)
+    if (variables) data.variables = variables
     if (name && name.length) {
       var operationName = name[2]
       if (operationName) data.operationName = name[2]
